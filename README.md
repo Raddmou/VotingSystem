@@ -16,3 +16,15 @@ Le déroulement du vote:
 ✔️ tout le monde consulte le résultat.
 ✔️ Le gagnant est déterminé à la majorité simple
 ✔️ La proposition qui obtient le plus de voix l'emporte.
+
+
+👉 Lien Heroku:
+https://guarded-castle-06311.herokuapp.com/
+
+
+👉 Lien Github Pages:
+https://raddmou.github.io/VotingSystem/
+
+
+👉 Video Demo:
+./VideoDemo/Defi3.mp4
