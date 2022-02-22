@@ -22040,12 +22040,12 @@
         }
       },
       "links": {},
-      "address": "0x51BF152e93BfEbF19F366E4dcb7b883108Dc8aD2",
-      "transactionHash": "0x94e10fff7d94be51d712756ce90b1e001a78055d6d85f55d8b841faecc3e9f6c"
+      "address": "0x9CB9aaC8dC7fd924493c98E5212B8d1760973215",
+      "transactionHash": "0x125fe9543f43831143ac0726441f08c74937c9f97c383d40c3c55c5ea6e3c994"
     }
   },
   "schemaVersion": "3.4.4",
-  "updatedAt": "2022-02-21T22:46:19.712Z",
+  "updatedAt": "2022-02-22T08:36:20.036Z",
   "networkType": "ethereum",
   "devdoc": {
     "author": "Mourad M.",
