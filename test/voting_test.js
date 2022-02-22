@@ -24,15 +24,9 @@ contract('voting', function (accounts) {
             expectEvent(receipt, 'VoterRegistered', {voterAddress: voter01});
         });
     
-        it('Admin address can register voters on registring voters status', async function () {
-            let receipt = await this.votingInstance.registerVoters([voter01, voter02], {from: admin});
-            expectEvent(receipt, 'VoterRegistered', {voterAddress: voter01});
-            expectEvent(receipt, 'VoterRegistered', {voterAddress: voter02});
-        });
-    
         it('Non admin address trying to register voters on registring voters status should revert', async function () {
             await expectRevert(
-                this.votingInstance.registerVoters([voter01, voter02], {from: voter02}),
+                this.votingInstance.registerVoter(voter01, {from: voter02}),
                 "Ownable: caller is not the owner");
         });
     
@@ -60,13 +54,14 @@ contract('voting', function (accounts) {
             let receipt = await this.votingInstance.startProposalsRegistration({from: admin});
             await expectRevert(
                 this.votingInstance.startProposalsRegistration({from: admin}),
-                "Call is not approriate during the current voting status");
+                "Inapproriate call during current voting status");
         });
     });
 
     describe('Register proposal', () => {
         beforeEach(async function () {
-            await this.votingInstance.registerVoters([voter01, voter02], {from: admin});
+            await this.votingInstance.registerVoter(voter01, {from: admin});
+            await this.votingInstance.registerVoter(voter02, {from: admin});
             await this.votingInstance.startProposalsRegistration({from: admin});
         });
 
@@ -79,7 +74,7 @@ contract('voting', function (accounts) {
             await this.votingInstance.endProposalsRegistration({from: admin});
             await expectRevert(
                 this.votingInstance.registerProposal("proposition01", {from: voter01}),
-                "Call is not approriate during the current voting status");
+                "Inapproriate call during current voting status");
         });
     
         it('Non registered voter cannot register proposal on proposal registration started', async function () {
@@ -115,7 +110,7 @@ contract('voting', function (accounts) {
             await this.votingInstance.endProposalsRegistration({from: admin});
             await expectRevert(
                 this.votingInstance.endProposalsRegistration({from: admin}),
-                "Call is not approriate during the current voting status");
+                "Inapproriate call during current voting status");
         });
     });
 
@@ -140,13 +135,14 @@ contract('voting', function (accounts) {
             await this.votingInstance.startVotingSession({from: admin});
             await expectRevert(
                 this.votingInstance.startVotingSession({from: admin}),
-                "Call is not approriate during the current voting status");
+                "Inapproriate call during current voting status");
         });
     });
 
     describe('Vote', () => {
         beforeEach(async function () {
-            await this.votingInstance.registerVoters([voter01, voter02], {from: admin});
+            await this.votingInstance.registerVoter(voter01, {from: admin});
+            await this.votingInstance.registerVoter(voter02, {from: admin});
             await this.votingInstance.startProposalsRegistration({from: admin});
             await this.votingInstance.registerProposal("proposition01", {from: voter01});
             await this.votingInstance.registerProposal("proposition02", {from: voter02});
@@ -201,7 +197,7 @@ contract('voting', function (accounts) {
             await this.votingInstance.endVotingSession({from: admin});
             await expectRevert(
                 this.votingInstance.endVotingSession({from: admin}),
-                "Call is not approriate during the current voting status");
+                "Inapproriate call during current voting status");
         });
     });
 
@@ -228,13 +224,15 @@ contract('voting', function (accounts) {
             await this.votingInstance.tallyVotes({from: admin});
             await expectRevert(
                 this.votingInstance.tallyVotes({from: admin}),
-                "Call is not approriate during the current voting status");
+                "Inapproriate call during current voting status");
         });
     });
 
     describe('Get winner', () => {
         beforeEach(async function () {
-            await this.votingInstance.registerVoters([voter01, voter02, voter03], {from: admin});
+            await this.votingInstance.registerVoter(voter01, {from: admin});
+            await this.votingInstance.registerVoter(voter02, {from: admin});
+            await this.votingInstance.registerVoter(voter03, {from: admin});
             await this.votingInstance.startProposalsRegistration({from: admin});
             await this.votingInstance.registerProposal("proposition01", {from: voter01});
             await this.votingInstance.registerProposal("proposition02", {from: voter02});
