@@ -95,7 +95,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -119,7 +120,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -168,7 +170,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -191,7 +194,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -278,7 +282,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -291,7 +296,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     }
   ],
   "metadata": "{\"compiler\":{\"version\":\"0.8.12+commit.f00d7308\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"proposalId\",\"type\":\"uint256\"}],\"name\":\"ProposalRegistered\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"voter\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"proposalId\",\"type\":\"uint256\"}],\"name\":\"Voted\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"voterAddress\",\"type\":\"address\"}],\"name\":\"VoterRegistered\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"enum Voting.WorkflowStatus\",\"name\":\"previousStatus\",\"type\":\"uint8\"},{\"indexed\":false,\"internalType\":\"enum Voting.WorkflowStatus\",\"name\":\"newStatus\",\"type\":\"uint8\"}],\"name\":\"WorkflowStatusChanged\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"endProposalsRegistration\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"endVotingSession\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getCurrentVotingStatus\",\"outputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getCurrentVotingStatusKey\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getWinner\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"winnerProposalId\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"winnerProposalDescription\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"winnerVoteCount\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"proposals\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"description\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"voteCount\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"proposalDescription\",\"type\":\"string\"}],\"name\":\"registerProposal\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"addressToRegister\",\"type\":\"address\"}],\"name\":\"registerVoter\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"renounceOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"startProposalsRegistration\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"startVotingSession\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"tallyVotes\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"proposalId\",\"type\":\"uint256\"}],\"name\":\"vote\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"voters\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"isRegistered\",\"type\":\"bool\"},{\"internalType\":\"bool\",\"name\":\"hasVoted\",\"type\":\"bool\"},{\"internalType\":\"uint256\",\"name\":\"votedProposalId\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"author\":\"Mourad M.\",\"kind\":\"dev\",\"methods\":{\"owner()\":{\"details\":\"Returns the address of the current owner.\"},\"registerProposal(string)\":{\"params\":{\"proposalDescription\":\"proposal description to register Can only be called by a registred voter.\"}},\"registerVoter(address)\":{\"params\":{\"addressToRegister\":\"address voter to register Can only be called by the admin.\"}},\"renounceOwnership()\":{\"details\":\"Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner.\"},\"transferOwnership(address)\":{\"details\":\"Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner.\"},\"vote(uint256)\":{\"params\":{\"proposalId\":\"proposal identifier to vote for Can only be called by a registred voter. Can only be called during voting session.\"}}},\"stateVariables\":{\"_currentVotingStatus\":{\"details\":\"initialized to RegisteringVoters status.\"},\"_equalityWinners\":{\"details\":\"equals false before vote tailling.\"},\"_proposalIdIncrement\":{\"details\":\"initialized to 0.\"},\"_winnerVotedProposalId\":{\"details\":\"equals 0 before vote tailling.\"}},\"title\":\"voting\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"endProposalsRegistration()\":{\"notice\":\"end proposal registration session. Can only be called by the admin. Can only be called during voting session.\"},\"endVotingSession()\":{\"notice\":\"end proposal voting session. Can only be called by the admin. Can only be called during voting session.\"},\"getCurrentVotingStatus()\":{\"notice\":\"returns the current voting status\"},\"getCurrentVotingStatusKey()\":{\"notice\":\"returns the current voting status\"},\"getWinner()\":{\"notice\":\"returns the identifier, description and vote count of the proposal winner\"},\"proposals(uint256)\":{\"notice\":\"represents voters proposals.\"},\"registerProposal(string)\":{\"notice\":\"register a proposal\"},\"registerVoter(address)\":{\"notice\":\"register a voter by his address.\"},\"startProposalsRegistration()\":{\"notice\":\"start proposal registration session. Can only be called by the admin.\"},\"startVotingSession()\":{\"notice\":\"start proposal voting session. Can only be called by the admin. Can only be called after voting registration session.\"},\"tallyVotes()\":{\"notice\":\"tally votes to determinate a proposal winner. Can only be called by the admin.\"},\"vote(uint256)\":{\"notice\":\"vote for a proposal\"},\"voters(address)\":{\"notice\":\"represents the voters identified by their addresses.\"}},\"notice\":\"Implementation of Voting system. Exercice for Alyra Voting is not secret Each voter can see other people's votes The winner is determined by simple majority The proposal which obtains the most votes wins. The voting process: The voting administrator records a whitelist of voters identified by their Ethereum address. The voting administrator begins the recording session for the proposal. Registered voters are allowed to register their proposals while the registration session is active. The voting administrator ends the proposal recording session. The voting administrator begins the voting session. Registered voters vote for their favorite proposals. The voting administrator ends the voting session. The vote administrator counts the votes. Anyone can check the final details of the winning proposal.\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/Voting.sol\":\"Voting\"},\"evmVersion\":\"byzantium\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"@openzeppelin/contracts/access/Ownable.sol\":{\"keccak256\":\"0x24e0364e503a9bbde94c715d26573a76f14cd2a202d45f96f52134ab806b67b9\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://e12cbaa7378fd9b62280e4e1d164bedcb4399ce238f5f98fc0eefb7e50577981\",\"dweb:/ipfs/QmXRoFGUgfsaRkoPT5bxNMtSayKTQ8GZATLPXf69HcRA51\"]},\"@openzeppelin/contracts/utils/Context.sol\":{\"keccak256\":\"0xe2e337e6dde9ef6b680e07338c493ebea1b5fd09b43424112868e9cc1706bca7\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://6df0ddf21ce9f58271bdfaa85cde98b200ef242a05a3f85c2bc10a8294800a92\",\"dweb:/ipfs/QmRK2Y5Yc6BK7tGKkgsgn3aJEQGi5aakeSPZvS65PV8Xp3\"]},\"project:/contracts/Voting.sol\":{\"keccak256\":\"0xa1e38da16fd0fdc90010738d4a6a02c297766e867e76dc8909577cfad32e69fe\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://f2efa430ac543979bb9536fec2bccaa368fb4b272a72bc00229fde0c36a94ae2\",\"dweb:/ipfs/Qmes41nzMpqgXGLhf9QVmSzvBLCGDkiqSY4MA1J3RL8WuG\"]}},\"version\":1}",
@@ -21947,6 +21953,12 @@
     "version": "0.8.12+commit.f00d7308.Emscripten.clang"
   },
   "networks": {
+    "3": {
+      "events": {},
+      "links": {},
+      "address": "0xa114F1927671114D546De1fa539bF96CAB840d3d",
+      "transactionHash": "0x49908117bab5cb3fbc077db171a3e6fc7a8ecf08bd0d997096fa79070519e084"
+    },
     "5777": {
       "events": {
         "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0": {
@@ -22039,7 +22051,8 @@
     }
   },
   "schemaVersion": "3.4.4",
-  "updatedAt": "2022-02-22T09:03:13.539Z",
+  "updatedAt": "2022-03-06T11:47:12.483Z",
+  "networkType": "ethereum",
   "devdoc": {
     "author": "Mourad M.",
     "kind": "dev",

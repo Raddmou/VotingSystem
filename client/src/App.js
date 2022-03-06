@@ -59,6 +59,11 @@ const App = () => {
 		  deployedNetwork && deployedNetwork.address,
 		);
 
+		console.log("account: " +  callAccounts);
+		console.log("networkId: " + networkId);
+		console.log("deployedNetwork: " + deployedNetwork);
+		console.log("contract: " + instance);
+
 		// setWeb3(callWeb3);
 		// setAccounts(callAccounts);
 		// setContract(instance);
